@@ -51,13 +51,23 @@ const renderMarquee = () => {
 }
 
 const renderSeries = () => {
-  $('#series-list').innerHTML = allSeries.map((item, index) => `
+  $('#series-list').innerHTML = allSeries.map((item, index) => {
+    const count = allWorks.filter((work) => work.series === item.slug).length
+    return `
     <button class="series-row" type="button" data-series="${item.slug}">
       <span>${pad(index + 1)}</span>
       <span class="series-name"><strong>${item.title}</strong><small>${item.titleEn || ''}</small></span>
-      <span class="series-period">${item.period || ''}</span>
+      <span class="series-period">${count} 件作品</span>
       <span class="series-arrow">${arrowIcon}</span>
-    </button>`).join('')
+    </button>`
+  }).join('')
+
+  const linkedSeries = allSeries.filter((item) => item.linkUrl)
+  $('#series-links').innerHTML = linkedSeries.map((item) => `
+    <a href="${item.linkUrl}" target="_blank" rel="noreferrer">
+      <span>${item.title}</span><strong>${item.linkLabel || '查看相关项目'}</strong>${arrowIcon}
+    </a>`).join('')
+  $('#series-links').hidden = linkedSeries.length === 0
 
   $('#series-list').addEventListener('click', (event) => {
     const row = event.target.closest('[data-series]')

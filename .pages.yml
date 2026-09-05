@@ -35,17 +35,17 @@ content:
         type: select
         options:
           values:
-            - { name: tidal-memory, label: 潮汐与记忆 }
-            - { name: red-rooms, label: 红色房间 }
-            - { name: still-life, label: 静物研究 }
-            - { name: after-rain, label: 雨停之后 }
-            - { name: unnamed-garden, label: 无名花园 }
-            - { name: city-fragments, label: 城市切片 }
+            - { name: illustration, label: 插画 }
+            - { name: poster-design, label: 海报与 IP 设计 }
+            - { name: acrylic-oil, label: 丙烯与油画 }
+            - { name: watercolor, label: 水彩 }
+            - { name: watercolor-portrait, label: 水彩人物 }
+            - { name: printmaking, label: 版画 }
         required: true
       - name: year
         label: 创作年份
-        type: number
-        options: { min: 1900, max: 2100 }
+        type: string
+        description: 可填写年份或“待补充”
         required: true
       - { name: medium, label: 媒介与材料, type: string, required: true }
       - { name: dimensions, label: 尺寸, type: string }
@@ -106,6 +106,8 @@ content:
       - { name: titleEn, label: 英文名称, type: string }
       - { name: period, label: 创作时期, type: string }
       - { name: description, label: 系列简介, type: text }
+      - { name: linkLabel, label: 外部链接文字, type: string }
+      - { name: linkUrl, label: 外部链接地址, type: string }
       - name: order
         label: 展示顺序
         type: number
