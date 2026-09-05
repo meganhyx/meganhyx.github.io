@@ -1,0 +1,22 @@
+{
+  "artistName":"Megan",
+  "studioName":"Megan studio",
+  "location":"深圳",
+  "role":"独立艺术创作者",
+  "heroTitle":"让作品",
+  "heroAccent":"自己说话。",
+  "heroIntro":"我用绘画记录情绪、空间与日常生活中容易被忽略的片刻。这里将收录六个系列、共七十三件作品。",
+  "heroImage":"/images/placeholders/series-01.svg",
+  "heroImageAlt":"暖色与深蓝色块构成的抽象画面占位图",
+  "aboutTitle":"在具象与抽象之间，寻找一种",
+  "aboutAccent":"诚实的表达。",
+  "aboutParagraphs":["你好，我是 Megan，一名生活和工作在深圳的独立艺术创作者。我关注城市、记忆与个体感受，并通过绘画和视觉叙事将它们重新组织。","我的创作不追求单一固定的形式。纸张、颜料和数字媒介都是表达工具，真正重要的是作品能否留下具体而持久的感受。"],
+  "portrait":"/images/placeholders/portrait.svg",
+  "portraitAlt":"Megan 艺术家肖像占位插画",
+  "email":"hello@example.com",
+  "wechat":"MEGAN_ART",
+  "socialLabel":"@megan_studio",
+  "socialUrl":"https://example.com",
+  "contactIntro":"欢迎联系作品收藏、展览合作、品牌委托和其他创意项目。真实联系方式将在正式上线前替换。",
+  "availability":"开放合作"
+}

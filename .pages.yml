@@ -1,0 +1,144 @@
+media:
+  input: images/works
+  output: /images/works
+  rename: safe
+  extensions: [png, jpg, jpeg, webp, avif]
+  categories: [image]
+
+content:
+  - name: works
+    label: 作品
+    type: collection
+    path: content/works
+    format: json
+    filename: "{fields.order}-{fields.slug}.json"
+    view:
+      primary: title
+      fields: [title, series, year, featured, published, order]
+      sort: order
+      order: asc
+    fields:
+      - name: slug
+        label: 唯一标识
+        type: string
+        description: 使用英文小写和连字符，例如 morning-light-01
+        required: true
+      - name: title
+        label: 作品名称
+        type: string
+        required: true
+      - name: titleEn
+        label: 英文名称
+        type: string
+      - name: series
+        label: 所属系列
+        type: select
+        options:
+          values:
+            - { name: tidal-memory, label: 潮汐与记忆 }
+            - { name: red-rooms, label: 红色房间 }
+            - { name: still-life, label: 静物研究 }
+            - { name: after-rain, label: 雨停之后 }
+            - { name: unnamed-garden, label: 无名花园 }
+            - { name: city-fragments, label: 城市切片 }
+        required: true
+      - name: year
+        label: 创作年份
+        type: number
+        options: { min: 1900, max: 2100 }
+        required: true
+      - { name: medium, label: 媒介与材料, type: string, required: true }
+      - { name: dimensions, label: 尺寸, type: string }
+      - name: image
+        label: 主图
+        type: image
+        options:
+          extensions: [png, jpg, jpeg, webp, avif]
+          rename: safe
+        required: true
+      - name: gallery
+        label: 详情图片
+        type: image
+        options:
+          multiple: { max: 12 }
+          unique: true
+          extensions: [png, jpg, jpeg, webp, avif]
+          rename: safe
+      - name: alt
+        label: 图片文字说明
+        type: string
+        description: 简短描述画面，方便无障碍阅读和搜索引擎理解作品
+        required: true
+      - { name: description, label: 创作说明, type: text, required: true }
+      - { name: featured, label: 首页推荐, type: boolean, default: false }
+      - { name: published, label: 公开展示, type: boolean, default: true }
+      - name: order
+        label: 展示顺序
+        type: number
+        options: { min: 1 }
+        required: true
+      - name: layout
+        label: 列表布局
+        type: select
+        options:
+          values:
+            - { name: natural, label: 保留原始比例 }
+            - { name: portrait, label: 竖版 }
+            - { name: landscape, label: 横版 }
+            - { name: square, label: 方形 }
+        default: natural
+        required: true
+
+  - name: series
+    label: 系列
+    type: collection
+    path: content/series
+    format: json
+    filename: "{fields.order}-{fields.slug}.json"
+    view:
+      primary: title
+      fields: [title, titleEn, period, order, published]
+      sort: order
+      order: asc
+    fields:
+      - { name: slug, label: 系列标识, type: string, required: true }
+      - { name: title, label: 系列名称, type: string, required: true }
+      - { name: titleEn, label: 英文名称, type: string }
+      - { name: period, label: 创作时期, type: string }
+      - { name: description, label: 系列简介, type: text }
+      - name: order
+        label: 展示顺序
+        type: number
+        options: { min: 1 }
+        required: true
+      - { name: published, label: 公开展示, type: boolean, default: true, required: true }
+
+  - name: site
+    label: 个人资料与网站文字
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - { name: artistName, label: 艺术家姓名, type: string, required: true }
+      - { name: studioName, label: 工作室名称, type: string, required: true }
+      - { name: location, label: 所在城市, type: string, required: true }
+      - { name: role, label: 身份描述, type: string, required: true }
+      - { name: heroTitle, label: 首页标题, type: string, required: true }
+      - { name: heroAccent, label: 首页红色标题, type: string, required: true }
+      - { name: heroIntro, label: 首页简介, type: text, required: true }
+      - { name: heroImage, label: 首页代表图, type: image, required: true }
+      - { name: heroImageAlt, label: 首页图片说明, type: string, required: true }
+      - { name: aboutTitle, label: 关于标题, type: string, required: true }
+      - { name: aboutAccent, label: 关于红色标题, type: string, required: true }
+      - name: aboutParagraphs
+        label: 个人介绍段落
+        type: text
+        list: { min: 1, max: 6 }
+      - { name: portrait, label: 个人肖像, type: image, required: true }
+      - { name: portraitAlt, label: 肖像图片说明, type: string, required: true }
+      - { name: email, label: 邮箱, type: string, required: true }
+      - { name: wechat, label: 微信号, type: string }
+      - { name: socialLabel, label: 社交账号显示文字, type: string }
+      - { name: socialUrl, label: 社交账号链接, type: string }
+      - { name: contactIntro, label: 联系区介绍, type: text, required: true }
+      - { name: availability, label: 合作状态, type: string, required: true }

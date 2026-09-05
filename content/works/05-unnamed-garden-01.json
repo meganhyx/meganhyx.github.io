@@ -1,0 +1,17 @@
+{
+  "slug": "unnamed-garden-01",
+  "title": "无名花园",
+  "titleEn": "Unnamed Garden",
+  "series": "unnamed-garden",
+  "year": 2024,
+  "medium": "油画",
+  "dimensions": "100 × 140 cm",
+  "image": "/images/placeholders/series-05.svg",
+  "gallery": [],
+  "alt": "由绿色、红色与米色植物形态构成的横版绘画",
+  "description": "并非描绘一座真实花园，而是把植物的生长、遮挡与腐败组织成一种具有呼吸感的色彩关系。",
+  "featured": true,
+  "published": true,
+  "order": 5,
+  "layout": "landscape"
+}

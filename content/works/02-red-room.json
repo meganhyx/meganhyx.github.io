@@ -1,0 +1,17 @@
+{
+  "slug": "red-room",
+  "title": "红色房间",
+  "titleEn": "Red Room",
+  "series": "red-rooms",
+  "year": 2025,
+  "medium": "数字插画",
+  "dimensions": "竖版",
+  "image": "/images/placeholders/series-02.svg",
+  "gallery": [],
+  "alt": "朱红色和米色几何空间构成的竖版插画",
+  "description": "把房间拆解成记忆中的色彩切片，尝试描绘人在熟悉空间里产生的陌生感。",
+  "featured": true,
+  "published": true,
+  "order": 2,
+  "layout": "portrait"
+}
