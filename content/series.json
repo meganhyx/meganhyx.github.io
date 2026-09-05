@@ -1,0 +1,112 @@
+[
+  {
+    "slug": "illustration",
+    "title": "插画",
+    "titleEn": "Illustration",
+    "period": "5 件作品",
+    "description": "插画项目与视觉叙事作品，包含中信 ESG 相关创作。",
+    "order": 1,
+    "published": true,
+    "linkLabel": "中信 ESG 视频",
+    "linkUrl": "https://www.citicpacific.com/en/sustainability/"
+  },
+  {
+    "slug": "tidal-memory",
+    "title": "潮汐与记忆",
+    "titleEn": "Tidal Memory",
+    "period": "2025—2026",
+    "description": "关于潮水、身体感受与记忆回返的抽象研究。",
+    "order": 1,
+    "published": true
+  },
+  {
+    "slug": "poster-design",
+    "title": "海报与 IP 设计",
+    "titleEn": "Poster & IP Design",
+    "period": "18 件作品",
+    "description": "海报设计及 IP 设计项目。",
+    "order": 2,
+    "published": true
+  },
+  {
+    "slug": "red-rooms",
+    "title": "红色房间",
+    "titleEn": "Red Rooms",
+    "period": "2025",
+    "description": "把熟悉空间拆解为色彩与结构，观察其中的陌生感。",
+    "order": 2,
+    "published": true
+  },
+  {
+    "slug": "acrylic-oil",
+    "title": "丙烯与油画",
+    "titleEn": "Acrylic & Oil",
+    "period": "17 件作品",
+    "description": "系列介绍待补充。",
+    "order": 3,
+    "published": true
+  },
+  {
+    "slug": "still-life",
+    "title": "静物研究",
+    "titleEn": "Still Life Studies",
+    "period": "2024—2025",
+    "description": "以瓶、果实与桌面为对象，研究日常物件的几何秩序。",
+    "order": 3,
+    "published": true
+  },
+  {
+    "slug": "after-rain",
+    "title": "雨停之后",
+    "titleEn": "After the Rain",
+    "period": "2024",
+    "description": "从雨水、玻璃与城市表面的残留痕迹展开。",
+    "order": 4,
+    "published": true
+  },
+  {
+    "slug": "watercolor",
+    "title": "水彩",
+    "titleEn": "Watercolor",
+    "period": "10 件作品",
+    "description": "系列介绍待补充。",
+    "order": 4,
+    "published": true
+  },
+  {
+    "slug": "unnamed-garden",
+    "title": "无名花园",
+    "titleEn": "Unnamed Garden",
+    "period": "2023—2024",
+    "description": "以植物的生长、遮挡和腐败组织具有呼吸感的画面。",
+    "order": 5,
+    "published": true
+  },
+  {
+    "slug": "watercolor-portrait",
+    "title": "水彩人物",
+    "titleEn": "Watercolor Portrait",
+    "period": "6 件作品",
+    "description": "系列介绍待补充。",
+    "order": 5,
+    "published": true
+  },
+  {
+    "slug": "city-fragments",
+    "title": "城市切片",
+    "titleEn": "City Fragments",
+    "period": "2023—2026",
+    "description": "收集窗户、楼梯与标识，拼贴一座熟悉又不存在的城市。",
+    "order": 6,
+    "published": true
+  },
+  {
+    "slug": "printmaking",
+    "title": "版画",
+    "titleEn": "Printmaking",
+    "period": "16 件作品",
+    "description": "系列介绍待补充。",
+    "order": 6,
+    "published": true
+  }
+]

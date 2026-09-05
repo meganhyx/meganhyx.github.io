@@ -25,14 +25,14 @@ def main() -> None:
     output_content = OUTPUT / "content"
     output_content.mkdir()
     shutil.copy2(ROOT / "content" / "site.json", output_content / "site.json")
-    (output_content / "series.json").write_text(
-        json.dumps(read_collection(ROOT / "content" / "series"), ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-    (output_content / "works.json").write_text(
-        json.dumps(read_collection(ROOT / "content" / "works"), ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
+    series_manifest = json.dumps(read_collection(ROOT / "content" / "series"), ensure_ascii=False, indent=2) + "\n"
+    works_manifest = json.dumps(read_collection(ROOT / "content" / "works"), ensure_ascii=False, indent=2) + "\n"
+    (output_content / "series.json").write_text(series_manifest, encoding="utf-8")
+    (output_content / "works.json").write_text(works_manifest, encoding="utf-8")
+
+    # Keep branch-based GitHub Pages compatible with the same data manifests.
+    (ROOT / "content" / "series.json").write_text(series_manifest, encoding="utf-8")
+    (ROOT / "content" / "works.json").write_text(works_manifest, encoding="utf-8")
     (OUTPUT / ".nojekyll").touch()
     print(f"Built static portfolio at {OUTPUT}")
 
