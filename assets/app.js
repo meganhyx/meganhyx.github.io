@@ -105,17 +105,10 @@ const galleryColumnCount = () => {
   return 3
 }
 
-const CAPTION_UNITS = 0.09
-const estimatedCardHeight = (work) => (work.width && work.height ? work.height / work.width : 0.8) + CAPTION_UNITS
-
 const distributeIntoColumns = (works, count) => {
-  const columns = Array.from({ length: count }, () => ({ items: [], height: 0 }))
-  works.forEach((work) => {
-    const target = columns.reduce((shortest, column) => (column.height < shortest.height ? column : shortest), columns[0])
-    target.items.push(work)
-    target.height += estimatedCardHeight(work)
-  })
-  return columns.map((column) => column.items)
+  const columns = Array.from({ length: count }, () => [])
+  works.forEach((work, index) => columns[index % count].push(work))
+  return columns
 }
 
 const renderWorks = (active = 'all') => {
