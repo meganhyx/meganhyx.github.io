@@ -88,11 +88,12 @@ img { display: block; max-width: 100%; }
 .filters { display: flex; flex-wrap: wrap; gap: 10px; margin: -12px 0 44px 168px; }
 .filters button { padding: 9px 15px; border: 1px solid var(--line); border-radius: 99px; background: transparent; color: var(--muted); font-size: 12px; cursor: pointer; transition: border-color 180ms ease, background 180ms ease, color 180ms ease; }
 .filters button:hover, .filters button.active { border-color: var(--ink); background: var(--ink); color: var(--paper-soft); }
-.works-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 64px 28px; }
-.work-card { min-width: 0; }
+.works-grid { display: flex; gap: 28px; align-items: flex-start; }
+.works-col { flex: 1 1 0; min-width: 0; }
+.work-card { display: block; min-width: 0; margin-bottom: 72px; }
 .work-open { display: block; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: zoom-in; }
-.art-frame { position: relative; overflow: hidden; display: grid; place-items: center; aspect-ratio: 4 / 5; width: 100%; background: #d9d5cc; }
-.art-frame img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; transition: transform 700ms cubic-bezier(.2,.7,.2,1); }
+.art-frame { position: relative; overflow: hidden; display: block; width: 100%; min-height: 0; max-height: calc(100vh - 175px); max-height: calc(100dvh - 175px); background: #d9d5cc; }
+.art-frame img, .work-card.portrait .art-frame img, .work-card.landscape .art-frame img, .work-card.square .art-frame img { display: block; width: 100%; height: auto; max-height: calc(100vh - 175px); max-height: calc(100dvh - 175px); object-fit: contain; transition: transform 700ms cubic-bezier(.2,.7,.2,1); }
 .view-work { position: absolute; right: 16px; bottom: 16px; padding: 9px 12px; border-radius: 99px; background: rgba(250,248,243,.9); color: var(--ink); font-size: 11px; opacity: 0; transform: translateY(8px); transition: opacity 220ms ease, transform 220ms ease; backdrop-filter: blur(8px); }
 .work-open:hover .view-work, .work-open:focus-visible .view-work { opacity: 1; transform: translateY(0); }
 .work-open:hover .art-frame img { transform: scale(1.025); }
@@ -170,7 +171,7 @@ img { display: block; max-width: 100%; }
   .hero-art { width: min(86%, 580px); margin: 34px auto 0; justify-self: center; }
   .section-heading { grid-template-columns: 1fr auto; }
   .filters { margin-left: 112px; }
-  .works-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 20px; }
+  .works-grid { gap: 20px; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
   .about-grid .portrait { position: static; width: min(70%, 480px); }
   .lightbox-panel { grid-template-columns: 1fr; }
@@ -193,7 +194,11 @@ img { display: block; max-width: 100%; }
   .series-period { display: none; }
   .filters { margin: 0 0 34px; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
   .filters button { flex: 0 0 auto; }
-  .works-grid { grid-template-columns: 1fr; gap: 48px 0; }
+  .works-grid { flex-direction: column; gap: 0; }
+  .work-card { margin-bottom: 58px; }
+  .work-card:nth-child(even) { width: 88%; margin-left: 12%; }
+  .work-card .art-frame img, .work-card.portrait .art-frame img, .work-card.landscape .art-frame img, .work-card.square .art-frame img { width: 100%; height: auto; object-fit: contain; }
+  .art-frame { min-height: 0; }
   .about-grid { gap: 56px; }
   .about-grid .portrait { width: 82%; }
   .about-copy h2 { margin-bottom: 36px; }
