@@ -57,7 +57,7 @@ img { display: block; max-width: 100%; }
 .portrait figcaption { display: flex; justify-content: space-between; gap: 20px; padding-top: 14px; border-top: 1px solid var(--line); margin-top: 14px; color: var(--muted); font-size: 11px; line-height: 1.5; }
 
 .marquee { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--accent); color: #fff9f2; }
-.marquee-track { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+.marquee-track { display: flex; width: max-content; animation: marquee 60s linear infinite; }
 .marquee-content { display: flex; align-items: center; padding: 17px 0; font-family: var(--serif); font-size: 18px; line-height: 1; white-space: nowrap; }
 .marquee-content span { display: inline-flex; align-items: center; gap: 34px; margin-right: 34px; line-height: 1; }
 .marquee-content i { width: 7px; height: 7px; border: 1px solid currentColor; transform: rotate(45deg); }
