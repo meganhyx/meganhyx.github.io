@@ -223,12 +223,6 @@ const start = async () => {
     renderSeries()
     renderFilters()
     renderWorks()
-    const featured = allWorks.find((work) => work.featured) || allWorks[0]
-    if (featured) {
-      $('#hero-image').src = asset(featured.image)
-      $('#hero-image').alt = featured.alt
-      $('#hero-caption').innerHTML = `<span>${featured.title}，${featured.year}</span><span>${featured.medium} / ${featured.dimensions || '尺寸待补充'}</span>`
-    }
     bindInteractions()
     lastColumnCount = galleryColumnCount()
     window.addEventListener('resize', () => {
