@@ -26,7 +26,7 @@ python -m http.server 4173 --directory _site
 
 源内容位于：
 
-- `content/works/`：每件作品一个 JSON 文件，适合维护 72 张及更多作品
+- `content/works/`：每件作品一个 JSON 文件，适合维护 76 张及更多作品
 - `content/series/`：每个系列一个 JSON 文件
 - `content/site.json`：个人资料和联系方式
 - `images/works/`：真实作品图片
@@ -51,4 +51,4 @@ python -m http.server 4173 --directory _site
 - `layout` 可选择保留原始比例、横版、竖版或方形。
 - 画廊使用 `object-fit: contain`，不会裁掉作品内容。
 - 移动端始终优先按真实比例展示。
-- 非首屏图片启用浏览器原生懒加载，适合当前 72 张作品。
+- 非首屏图片启用浏览器原生懒加载，适合当前 76 张作品。

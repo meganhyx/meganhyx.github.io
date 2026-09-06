@@ -1,17 +1,17 @@
 {
-  "slug": "illustration-05",
-  "title": "插画 05",
+  "slug": "printmaking-05",
+  "title": "版画 05",
   "titleEn": "",
-  "series": "illustration",
+  "series": "printmaking",
   "year": "",
   "medium": "",
   "dimensions": "",
-  "image": "/images/works/illustration/1-5.png",
+  "image": "/images/works/printmaking/6-5.png",
   "gallery": [],
-  "alt": "插画 05",
+  "alt": "版画 05",
   "description": "",
   "featured": false,
   "published": true,
-  "order": 5,
+  "order": 65,
   "layout": "landscape"
 }

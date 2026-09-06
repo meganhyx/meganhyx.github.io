@@ -85,11 +85,12 @@ const renderFilters = (active = 'all') => {
 
 const workCardHtml = (work, index) => {
   const ratio = work.width && work.height ? ` style="aspect-ratio:${work.width} / ${work.height}"` : ''
+  const meta = [work.medium, work.year].filter(Boolean).join(" · ")
   return `
   <article class="work-card ${work.layout || 'natural'}">
     <button class="work-open" type="button" data-work="${work.slug}" aria-label="查看作品《${work.title}》">
-      <span class="art-frame"${ratio}><img src="${asset(work.image)}" alt="${work.alt}" width="${work.width || 'auto'}" height="${work.height || 'auto'}" loading="${index > 1 ? 'lazy' : 'eager'}" decoding="async"><span class="view-work">查看作品</span></span>
-      <span class="work-info"><span><strong>${work.title}</strong><small>${work.medium} · ${work.year}</small></span><span class="work-number">${pad(work.order)}</span></span>
+      <span class="art-frame"${ratio}><img src="${asset(work.image)}" alt="${work.alt || work.title}" width="${work.width || 'auto'}" height="${work.height || 'auto'}" loading="${index > 1 ? 'lazy' : 'eager'}" decoding="async"><span class="view-work">查看作品</span></span>
+      <span class="work-info"><span><strong>${work.title}</strong>${meta ? `<small>${meta}</small>` : ''}</span><span class="work-number">${pad(work.order)}</span></span>
     </button>
   </article>`
 }
@@ -141,11 +142,15 @@ const openWork = (work) => {
   galleryIndex = 0
   const series = allSeries.find((item) => item.slug === work.series)
   setText('#lightbox-index', `${pad(work.order)} / ${pad(allWorks.length)}`)
-  setText('#lightbox-series', `${series?.title || ''} · ${series?.titleEn || ''}`)
+  setText('#lightbox-series', [series?.title, series?.titleEn].filter(Boolean).join(' · '))
   setText('#lightbox-title', work.title)
   setText('#lightbox-title-en', work.titleEn || '')
-  setText('#lightbox-description', work.description)
-  $('#lightbox-meta').innerHTML = `<div><dt>年份</dt><dd>${work.year}</dd></div><div><dt>媒介</dt><dd>${work.medium}</dd></div>${work.dimensions ? `<div><dt>尺寸</dt><dd>${work.dimensions}</dd></div>` : ''}`
+  setText('#lightbox-description', work.description || '')
+  $('#lightbox-meta').innerHTML = [
+    work.year ? `<div><dt>年份</dt><dd>${work.year}</dd></div>` : '',
+    work.medium ? `<div><dt>媒介</dt><dd>${work.medium}</dd></div>` : '',
+    work.dimensions ? `<div><dt>尺寸</dt><dd>${work.dimensions}</dd></div>` : '',
+  ].join('')
   updateLightboxImage()
   $('#lightbox').hidden = false
   document.body.classList.add('locked')
