@@ -105,7 +105,7 @@ img { display: block; max-width: 100%; }
 
 .about-section { padding: 132px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper-soft); }
 .about-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(50px, 9vw, 150px); align-items: start; }
-.portrait { position: sticky; top: 112px; margin: 0; }
+.about-grid .portrait { position: sticky; top: 112px; margin: 0; }
 .portrait-frame { overflow: hidden; aspect-ratio: 4 / 5; border-radius: 220px 220px 0 0; background: var(--accent-soft); }
 .portrait-frame img { width: 100%; height: 100%; object-fit: cover; }
 .about-copy h2 { max-width: 800px; margin: 18px 0 54px; font-family: var(--serif); font-size: clamp(42px, 5.7vw, 78px); font-weight: 400; letter-spacing: -.055em; line-height: 1.03; }
@@ -170,7 +170,7 @@ img { display: block; max-width: 100%; }
   .filters { margin-left: 112px; }
   .works-grid { gap: 20px; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
-  .portrait { position: static; width: min(70%, 480px); }
+  .about-grid .portrait { position: static; width: min(70%, 480px); }
   .lightbox-panel { grid-template-columns: 1fr; }
   .lightbox-copy { min-height: 340px; }
 }
@@ -197,7 +197,7 @@ img { display: block; max-width: 100%; }
   .work-card .art-frame img, .work-card.portrait .art-frame img, .work-card.landscape .art-frame img, .work-card.square .art-frame img { width: 100%; height: auto; object-fit: contain; }
   .art-frame { min-height: 0; }
   .about-grid { gap: 56px; }
-  .portrait { width: 82%; }
+  .about-grid .portrait { width: 82%; }
   .about-copy h2 { margin-bottom: 36px; }
   .about-body { grid-template-columns: 1fr; gap: 20px; margin-left: 0; }
   .facts { grid-template-columns: 1fr; margin-top: 48px; }
