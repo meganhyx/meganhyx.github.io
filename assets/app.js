@@ -33,9 +33,14 @@ const renderSite = (site) => {
   setText('#hero-intro', site.heroIntro)
   $('#hero-image').src = asset(site.heroImage)
   $('#hero-image').alt = site.heroImageAlt
-  setText('#portrait-caption', `${site.location}，2026`)
   $('#portrait-image').src = asset(site.portrait)
   $('#portrait-image').alt = site.portraitAlt
+  const credentials = $('#about-credentials')
+  if (credentials) {
+    const block = (title, items, nameKey, periodKey) =>
+      `<div class="credential-block"><h3>${title}</h3>${(items || []).map((item) => `<p><strong>${item[nameKey]}</strong><span>${item[periodKey] || ''}</span></p>`).join('')}</div>`
+    credentials.innerHTML = block('教育背景', site.education, 'school', 'period') + block('获奖', site.awards, 'name', 'period')
+  }
   setText('#about-title-text', site.aboutTitle)
   setText('#about-accent', site.aboutAccent)
   $('#about-body').innerHTML = (site.aboutParagraphs || []).map((paragraph) => `<p>${paragraph}</p>`).join('')

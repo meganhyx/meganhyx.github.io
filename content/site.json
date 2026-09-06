@@ -1,21 +1,44 @@
 {
-  "artistName":"Megan",
-  "studioName":"Megan studio",
-  "location":"上海",
-  "role":"独立艺术创作者",
-  "heroTitle":"让作品",
-  "heroAccent":"自己说话。",
-  "heroIntro":"我用绘画记录情绪、空间与日常生活中容易被忽略的片刻。这里收录六个系列、共七十六件作品。",
-  "heroImage":"/images/placeholders/series-01.svg",
-  "heroImageAlt":"暖色与深蓝色块构成的抽象画面占位图",
-  "aboutTitle":"在具象与抽象之间，寻找一种",
-  "aboutAccent":"诚实的表达。",
-  "aboutParagraphs":["你好，我是 Megan，一名生活和工作在上海的独立艺术创作者。我关注城市、记忆与个体感受，并通过绘画和视觉叙事将它们重新组织。","我的创作不追求单一固定的形式。纸张、颜料和数字媒介都是表达工具，真正重要的是作品能否留下具体而持久的感受。"],
-  "portrait":"/images/megan.png",
-  "portraitAlt":"Megan 在个人作品展览现场",
-  "email":"meganhouyx@icloud.com",
-  "phone":"132-4801-8525",
-  "wechat":"MeganH_0425",
-  "contactIntro":"欢迎咨询作品收藏、委托合作、展览及品牌项目。",
-  "availability":"开放合作"
+  "artistName": "Megan",
+  "studioName": "Megan studio",
+  "location": "上海",
+  "role": "独立艺术创作者",
+  "heroTitle": "让作品",
+  "heroAccent": "自己说话。",
+  "heroIntro": "我用绘画记录情绪、空间与日常生活中容易被忽略的片刻。这里收录六个系列、共七十六件作品。",
+  "heroImage": "/images/placeholders/series-01.svg",
+  "heroImageAlt": "暖色与深蓝色块构成的抽象画面占位图",
+  "aboutTitle": "在具象与抽象之间，寻找一种",
+  "aboutAccent": "诚实的表达。",
+  "aboutParagraphs": [
+    "侯雨欣，美术学专业。主修综合绘画创作、水彩具象研究、具象素描人物解剖应用、西方艺术发展流变、色彩造型训练、当代影像艺术解读与铜板基础，专业课成绩位列院内前 15%。",
+    "我的创作不追求单一固定的形式。纸张、颜料和数字媒介都是表达工具，真正重要的是作品能否留下具体而持久的感受。"
+  ],
+  "portrait": "/images/megan.png",
+  "portraitAlt": "侯雨欣在个人作品展览现场",
+  "email": "meganhouyx@icloud.com",
+  "phone": "132-4801-8525",
+  "wechat": "MeganH_0425",
+  "contactIntro": "欢迎咨询作品收藏、委托合作、展览及品牌项目。",
+  "availability": "开放合作",
+  "education": [
+    {
+      "school": "鲁迅美术学院（沈阳）",
+      "period": "2020 — 2024"
+    },
+    {
+      "school": "大连市第十五中学（大连）",
+      "period": "2018 — 2020"
+    }
+  ],
+  "awards": [
+    {
+      "name": "学院奖学金",
+      "period": "2021 — 2022 学年度"
+    },
+    {
+      "name": "学院奖学金",
+      "period": "2022 — 2023 学年度"
+    }
+  ]
 }
