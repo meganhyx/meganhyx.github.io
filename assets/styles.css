@@ -68,7 +68,7 @@ img { display: block; max-width: 100%; }
 .section-heading { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: end; margin-bottom: 58px; }
 .section-index { color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
 .section-heading h2 { margin: 0; font-family: var(--serif); font-size: clamp(44px, 6vw, 82px); font-weight: 400; letter-spacing: -.05em; line-height: .95; }
-.section-heading p { max-width: 270px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.section-heading p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
 .series-list { border-top: 1px solid var(--line); }
 .series-row { width: 100%; display: grid; grid-template-columns: 90px minmax(0, 1fr) 150px 54px; align-items: center; gap: 20px; padding: 24px 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: inherit; text-align: left; cursor: pointer; transition: color 200ms ease, padding 200ms ease; }
 .series-row:hover { padding-left: 12px; color: var(--accent); }

@@ -27,7 +27,6 @@ const renderSite = (site) => {
   setText('#brand-mark', site.artistName.slice(0, 1).toUpperCase())
   setText('#brand-name', site.studioName)
   setText('#availability-text', site.availability)
-  setText('#hero-eyebrow', `${site.role} · ${site.location}`)
   setText('#hero-title', site.heroTitle)
   setText('#hero-accent', site.heroAccent)
   setText('#hero-intro', site.heroIntro)
@@ -53,7 +52,7 @@ const renderSite = (site) => {
 }
 
 const renderMarquee = () => {
-  const content = allSeries.map((item) => `<span>${item.title}<i></i></span>`).join('')
+  const content = allSeries.map((item) => `<span>${item.title}<i></i></span>`).join('').repeat(4)
   $('#marquee-track').innerHTML = `<div class="marquee-content">${content}</div><div class="marquee-content">${content}</div>`
 }
 
