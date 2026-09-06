@@ -14,7 +14,9 @@
     "featured": true,
     "published": true,
     "order": 1,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 2234,
+    "height": 1032
   },
   {
     "slug": "illustration-02",
@@ -31,7 +33,9 @@
     "featured": false,
     "published": true,
     "order": 2,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 2234,
+    "height": 1032
   },
   {
     "slug": "illustration-03",
@@ -48,7 +52,9 @@
     "featured": false,
     "published": true,
     "order": 3,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 6178,
+    "height": 2853
   },
   {
     "slug": "illustration-04",
@@ -65,7 +71,9 @@
     "featured": false,
     "published": true,
     "order": 4,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 2234,
+    "height": 1032
   },
   {
     "slug": "illustration-05",
@@ -82,7 +90,9 @@
     "featured": false,
     "published": true,
     "order": 5,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 2150,
+    "height": 1216
   },
   {
     "slug": "poster-design-01",
@@ -99,7 +109,9 @@
     "featured": false,
     "published": true,
     "order": 6,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 6331,
+    "height": 2743
   },
   {
     "slug": "poster-design-02",
@@ -116,7 +128,9 @@
     "featured": false,
     "published": true,
     "order": 7,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 6380,
+    "height": 2753
   },
   {
     "slug": "poster-design-03",
@@ -133,7 +147,9 @@
     "featured": false,
     "published": true,
     "order": 8,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 6285,
+    "height": 2729
   },
   {
     "slug": "poster-design-04",
@@ -150,7 +166,9 @@
     "featured": false,
     "published": true,
     "order": 9,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 6256,
+    "height": 2722
   },
   {
     "slug": "poster-design-05",
@@ -167,7 +185,9 @@
     "featured": false,
     "published": true,
     "order": 10,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 6308,
+    "height": 2756
   },
   {
     "slug": "poster-design-06",
@@ -184,7 +204,9 @@
     "featured": false,
     "published": true,
     "order": 11,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 6326,
+    "height": 2753
   },
   {
     "slug": "poster-design-07",
@@ -201,7 +223,9 @@
     "featured": false,
     "published": true,
     "order": 12,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 6248,
+    "height": 2729
   },
   {
     "slug": "poster-design-08",
@@ -218,7 +242,9 @@
     "featured": false,
     "published": true,
     "order": 13,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 6298,
+    "height": 2729
   },
   {
     "slug": "poster-design-09",
@@ -235,7 +261,9 @@
     "featured": false,
     "published": true,
     "order": 14,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 6111,
+    "height": 2719
   },
   {
     "slug": "poster-design-10",
@@ -252,7 +280,9 @@
     "featured": false,
     "published": true,
     "order": 15,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 4096,
+    "height": 2304
   },
   {
     "slug": "poster-design-11",
@@ -269,7 +299,9 @@
     "featured": false,
     "published": true,
     "order": 16,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 4096,
+    "height": 2304
   },
   {
     "slug": "poster-design-12",
@@ -286,7 +318,9 @@
     "featured": false,
     "published": true,
     "order": 17,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 530,
+    "height": 794
   },
   {
     "slug": "poster-design-13",
@@ -303,7 +337,9 @@
     "featured": false,
     "published": true,
     "order": 18,
-    "layout": "square"
+    "layout": "square",
+    "width": 839,
+    "height": 884
   },
   {
     "slug": "poster-design-14",
@@ -320,7 +356,9 @@
     "featured": false,
     "published": true,
     "order": 19,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 1630,
+    "height": 886
   },
   {
     "slug": "poster-design-15",
@@ -337,7 +375,9 @@
     "featured": false,
     "published": true,
     "order": 20,
-    "layout": "square"
+    "layout": "square",
+    "width": 1630,
+    "height": 1645
   },
   {
     "slug": "poster-design-16",
@@ -354,7 +394,9 @@
     "featured": false,
     "published": true,
     "order": 21,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 765,
+    "height": 1135
   },
   {
     "slug": "poster-design-17",
@@ -371,7 +413,9 @@
     "featured": false,
     "published": true,
     "order": 22,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 2178,
+    "height": 4096
   },
   {
     "slug": "poster-design-18",
@@ -388,7 +432,9 @@
     "featured": false,
     "published": true,
     "order": 23,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 2250,
+    "height": 4000
   },
   {
     "slug": "acrylic-oil-01",
@@ -405,7 +451,9 @@
     "featured": false,
     "published": true,
     "order": 24,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1280,
+    "height": 1635
   },
   {
     "slug": "acrylic-oil-02",
@@ -422,7 +470,9 @@
     "featured": false,
     "published": true,
     "order": 25,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1080,
+    "height": 1440
   },
   {
     "slug": "acrylic-oil-03",
@@ -439,7 +489,9 @@
     "featured": false,
     "published": true,
     "order": 26,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 2763,
+    "height": 714
   },
   {
     "slug": "acrylic-oil-04",
@@ -456,7 +508,9 @@
     "featured": false,
     "published": true,
     "order": 27,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 1963,
+    "height": 817
   },
   {
     "slug": "acrylic-oil-05",
@@ -473,7 +527,9 @@
     "featured": false,
     "published": true,
     "order": 28,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 828,
+    "height": 390
   },
   {
     "slug": "acrylic-oil-06",
@@ -490,7 +546,9 @@
     "featured": false,
     "published": true,
     "order": 29,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 1589,
+    "height": 917
   },
   {
     "slug": "acrylic-oil-07",
@@ -507,7 +565,9 @@
     "featured": false,
     "published": true,
     "order": 30,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 1589,
+    "height": 908
   },
   {
     "slug": "acrylic-oil-08",
@@ -524,7 +584,9 @@
     "featured": false,
     "published": true,
     "order": 31,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 2093,
+    "height": 926
   },
   {
     "slug": "acrylic-oil-09",
@@ -541,7 +603,9 @@
     "featured": false,
     "published": true,
     "order": 32,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 2262,
+    "height": 926
   },
   {
     "slug": "acrylic-oil-10",
@@ -558,7 +622,9 @@
     "featured": false,
     "published": true,
     "order": 33,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 3017,
+    "height": 1710
   },
   {
     "slug": "acrylic-oil-11",
@@ -575,7 +641,9 @@
     "featured": false,
     "published": true,
     "order": 34,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 2643,
+    "height": 1254
   },
   {
     "slug": "acrylic-oil-12",
@@ -592,7 +660,9 @@
     "featured": false,
     "published": true,
     "order": 35,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 1048,
+    "height": 659
   },
   {
     "slug": "acrylic-oil-13",
@@ -609,7 +679,9 @@
     "featured": false,
     "published": true,
     "order": 36,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 983,
+    "height": 738
   },
   {
     "slug": "acrylic-oil-14",
@@ -626,7 +698,9 @@
     "featured": false,
     "published": true,
     "order": 37,
-    "layout": "square"
+    "layout": "square",
+    "width": 474,
+    "height": 482
   },
   {
     "slug": "acrylic-oil-15",
@@ -643,7 +717,9 @@
     "featured": false,
     "published": true,
     "order": 38,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1076,
+    "height": 1650
   },
   {
     "slug": "acrylic-oil-16",
@@ -660,7 +736,9 @@
     "featured": false,
     "published": true,
     "order": 39,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 2139,
+    "height": 2729
   },
   {
     "slug": "acrylic-oil-17",
@@ -677,7 +755,9 @@
     "featured": false,
     "published": true,
     "order": 40,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1484,
+    "height": 1978
   },
   {
     "slug": "watercolor-01",
@@ -694,7 +774,9 @@
     "featured": false,
     "published": true,
     "order": 41,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 3185,
+    "height": 2008
   },
   {
     "slug": "watercolor-02",
@@ -711,7 +793,9 @@
     "featured": false,
     "published": true,
     "order": 42,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1397,
+    "height": 1761
   },
   {
     "slug": "watercolor-03",
@@ -728,7 +812,9 @@
     "featured": false,
     "published": true,
     "order": 43,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 704,
+    "height": 1048
   },
   {
     "slug": "watercolor-04",
@@ -745,7 +831,9 @@
     "featured": false,
     "published": true,
     "order": 44,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 3442,
+    "height": 2271
   },
   {
     "slug": "watercolor-05",
@@ -762,7 +850,9 @@
     "featured": false,
     "published": true,
     "order": 45,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 865,
+    "height": 595
   },
   {
     "slug": "watercolor-06",
@@ -779,7 +869,9 @@
     "featured": false,
     "published": true,
     "order": 46,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 1636,
+    "height": 1025
   },
   {
     "slug": "watercolor-07",
@@ -796,7 +888,9 @@
     "featured": false,
     "published": true,
     "order": 47,
-    "layout": "square"
+    "layout": "square",
+    "width": 1362,
+    "height": 1237
   },
   {
     "slug": "watercolor-08",
@@ -813,7 +907,9 @@
     "featured": false,
     "published": true,
     "order": 48,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1873,
+    "height": 3452
   },
   {
     "slug": "watercolor-09",
@@ -830,7 +926,9 @@
     "featured": false,
     "published": true,
     "order": 49,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 2902,
+    "height": 3870
   },
   {
     "slug": "watercolor-10",
@@ -847,7 +945,9 @@
     "featured": false,
     "published": true,
     "order": 50,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1519,
+    "height": 2267
   },
   {
     "slug": "watercolor-portrait-01",
@@ -864,7 +964,9 @@
     "featured": false,
     "published": true,
     "order": 51,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 1706,
+    "height": 1279
   },
   {
     "slug": "watercolor-portrait-02",
@@ -881,7 +983,9 @@
     "featured": false,
     "published": true,
     "order": 52,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1279,
+    "height": 1706
   },
   {
     "slug": "watercolor-portrait-03",
@@ -898,7 +1002,9 @@
     "featured": false,
     "published": true,
     "order": 53,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1279,
+    "height": 1776
   },
   {
     "slug": "watercolor-portrait-04",
@@ -915,7 +1021,9 @@
     "featured": false,
     "published": true,
     "order": 54,
-    "layout": "square"
+    "layout": "square",
+    "width": 1370,
+    "height": 1279
   },
   {
     "slug": "watercolor-portrait-05",
@@ -932,7 +1040,9 @@
     "featured": false,
     "published": true,
     "order": 55,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1589,
+    "height": 2018
   },
   {
     "slug": "watercolor-portrait-06",
@@ -949,7 +1059,9 @@
     "featured": false,
     "published": true,
     "order": 56,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 2213,
+    "height": 1624
   },
   {
     "slug": "printmaking-01",
@@ -966,7 +1078,9 @@
     "featured": false,
     "published": true,
     "order": 57,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1628,
+    "height": 2170
   },
   {
     "slug": "printmaking-02",
@@ -983,7 +1097,9 @@
     "featured": false,
     "published": true,
     "order": 58,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 987,
+    "height": 1314
   },
   {
     "slug": "printmaking-03",
@@ -1000,7 +1116,9 @@
     "featured": false,
     "published": true,
     "order": 59,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 985,
+    "height": 1314
   },
   {
     "slug": "printmaking-04",
@@ -1017,7 +1135,9 @@
     "featured": false,
     "published": true,
     "order": 60,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 939,
+    "height": 1314
   },
   {
     "slug": "printmaking-05",
@@ -1034,7 +1154,9 @@
     "featured": false,
     "published": true,
     "order": 61,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 1206,
+    "height": 855
   },
   {
     "slug": "printmaking-06",
@@ -1051,7 +1173,9 @@
     "featured": false,
     "published": true,
     "order": 62,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1206,
+    "height": 1601
   },
   {
     "slug": "printmaking-07",
@@ -1068,7 +1192,9 @@
     "featured": false,
     "published": true,
     "order": 63,
-    "layout": "square"
+    "layout": "square",
+    "width": 1206,
+    "height": 1297
   },
   {
     "slug": "printmaking-08",
@@ -1085,7 +1211,9 @@
     "featured": false,
     "published": true,
     "order": 64,
-    "layout": "square"
+    "layout": "square",
+    "width": 1206,
+    "height": 1201
   },
   {
     "slug": "printmaking-09",
@@ -1102,7 +1230,9 @@
     "featured": false,
     "published": true,
     "order": 65,
-    "layout": "square"
+    "layout": "square",
+    "width": 1206,
+    "height": 1304
   },
   {
     "slug": "printmaking-10",
@@ -1119,7 +1249,9 @@
     "featured": false,
     "published": true,
     "order": 66,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 2851,
+    "height": 2108
   },
   {
     "slug": "printmaking-11",
@@ -1136,7 +1268,9 @@
     "featured": false,
     "published": true,
     "order": 67,
-    "layout": "square"
+    "layout": "square",
+    "width": 1357,
+    "height": 1366
   },
   {
     "slug": "printmaking-12",
@@ -1153,7 +1287,9 @@
     "featured": false,
     "published": true,
     "order": 68,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1080,
+    "height": 1440
   },
   {
     "slug": "printmaking-13",
@@ -1170,7 +1306,9 @@
     "featured": false,
     "published": true,
     "order": 69,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1080,
+    "height": 1440
   },
   {
     "slug": "printmaking-14",
@@ -1187,7 +1325,9 @@
     "featured": false,
     "published": true,
     "order": 70,
-    "layout": "square"
+    "layout": "square",
+    "width": 1080,
+    "height": 1080
   },
   {
     "slug": "printmaking-15",
@@ -1204,7 +1344,9 @@
     "featured": false,
     "published": true,
     "order": 71,
-    "layout": "landscape"
+    "layout": "landscape",
+    "width": 1938,
+    "height": 1375
   },
   {
     "slug": "printmaking-16",
@@ -1221,6 +1363,8 @@
     "featured": false,
     "published": true,
     "order": 72,
-    "layout": "portrait"
+    "layout": "portrait",
+    "width": 1978,
+    "height": 2735
   }
 ]

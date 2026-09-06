@@ -83,13 +83,16 @@ const renderFilters = (active = 'all') => {
   $('#filters').innerHTML = `<button type="button" data-filter="all" class="${active === 'all' ? 'active' : ''}">全部</button>${allSeries.map((item) => `<button type="button" data-filter="${item.slug}" class="${active === item.slug ? 'active' : ''}">${item.title}</button>`).join('')}`
 }
 
-const workCardHtml = (work, index) => `
+const workCardHtml = (work, index) => {
+  const ratio = work.width && work.height ? ` style="aspect-ratio:${work.width} / ${work.height}"` : ''
+  return `
   <article class="work-card ${work.layout || 'natural'}">
     <button class="work-open" type="button" data-work="${work.slug}" aria-label="查看作品《${work.title}》">
-      <span class="art-frame"><img src="${asset(work.image)}" alt="${work.alt}" loading="${index > 1 ? 'lazy' : 'eager'}"><span class="view-work">查看作品</span></span>
+      <span class="art-frame"${ratio}><img src="${asset(work.image)}" alt="${work.alt}" width="${work.width || 'auto'}" height="${work.height || 'auto'}" loading="${index > 1 ? 'lazy' : 'eager'}" decoding="async"><span class="view-work">查看作品</span></span>
       <span class="work-info"><span><strong>${work.title}</strong><small>${work.medium} · ${work.year}</small></span><span class="work-number">${pad(work.order)}</span></span>
     </button>
   </article>`
+}
 
 const galleryColumnCount = () => {
   if (window.matchMedia('(max-width: 700px)').matches) return 1
@@ -97,10 +100,17 @@ const galleryColumnCount = () => {
   return 3
 }
 
+const CAPTION_UNITS = 0.09
+const estimatedCardHeight = (work) => (work.width && work.height ? work.height / work.width : 0.8) + CAPTION_UNITS
+
 const distributeIntoColumns = (works, count) => {
-  const columns = Array.from({ length: count }, () => [])
-  works.forEach((work, index) => columns[index % count].push(work))
-  return columns
+  const columns = Array.from({ length: count }, () => ({ items: [], height: 0 }))
+  works.forEach((work) => {
+    const target = columns.reduce((shortest, column) => (column.height < shortest.height ? column : shortest), columns[0])
+    target.items.push(work)
+    target.height += estimatedCardHeight(work)
+  })
+  return columns.map((column) => column.items)
 }
 
 const renderWorks = (active = 'all') => {

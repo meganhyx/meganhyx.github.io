@@ -2,15 +2,33 @@ from __future__ import annotations
 
 import json
 import shutil
+import struct
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 OUTPUT = ROOT / "_site"
 
 
+def png_size(path: Path) -> tuple[int, int]:
+    with path.open("rb") as handle:
+        header = handle.read(24)
+    if len(header) < 24 or header[:8] != b"\x89PNG\r\n\x1a\n":
+        return (0, 0)
+    width, height = struct.unpack(">II", header[16:24])
+    return (width, height)
+
+
 def read_collection(folder: Path) -> list[dict]:
     entries = [json.loads(path.read_text(encoding="utf-8")) for path in folder.glob("*.json")]
-    return sorted((item for item in entries if item.get("published", True)), key=lambda item: item.get("order", 9999))
+    items = sorted((item for item in entries if item.get("published", True)), key=lambda item: item.get("order", 9999))
+    for item in items:
+        image_ref = item.get("image", "")
+        image_path = ROOT / image_ref.lstrip("/") if image_ref else None
+        if image_path and image_path.is_file():
+            width, height = png_size(image_path)
+            item.setdefault("width", width)
+            item.setdefault("height", height)
+    return items
 
 
 def main() -> None:
