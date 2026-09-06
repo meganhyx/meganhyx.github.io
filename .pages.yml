@@ -139,8 +139,8 @@ content:
       - { name: portrait, label: 个人肖像, type: image, required: true }
       - { name: portraitAlt, label: 肖像图片说明, type: string, required: true }
       - { name: email, label: 邮箱, type: string, required: true }
+      - { name: phone, label: 电话, type: string }
+      - { name: phone, label: 电话, type: string }
       - { name: wechat, label: 微信号, type: string }
-      - { name: socialLabel, label: 社交账号显示文字, type: string }
-      - { name: socialUrl, label: 社交账号链接, type: string }
       - { name: contactIntro, label: 联系区介绍, type: text, required: true }
       - { name: availability, label: 合作状态, type: string, required: true }

@@ -42,9 +42,9 @@ const renderSite = (site) => {
   setText('#contact-intro', site.contactIntro)
   setText('#copyright', `© 2026 ${site.studioName}. All works reserved.`)
   $('#contact-methods').innerHTML = `
+    <a href="tel:${(site.phone || '').replace(/[^0-9+]/g, '')}"><span>电话</span><strong>${site.phone || ''}</strong>${arrowIcon}</a>
     <a href="mailto:${site.email}"><span>邮箱</span><strong>${site.email}</strong>${arrowIcon}</a>
-    <div><span>微信</span><strong>${site.wechat}</strong></div>
-    <a href="${site.socialUrl}" target="_blank" rel="noreferrer"><span>社交媒体</span><strong>${site.socialLabel}</strong>${arrowIcon}</a>`
+    <div><span>微信</span><strong>${site.wechat || ''}</strong></div>`
 }
 
 const renderMarquee = () => {

@@ -76,6 +76,12 @@ def main() -> None:
     shutil.copy2(ROOT / "index.html", OUTPUT / "index.html")
     shutil.copytree(ROOT / "assets", OUTPUT / "assets")
 
+    # Top-level images (e.g. the artist portrait) live beside the works tree.
+    (OUTPUT / "images").mkdir(parents=True, exist_ok=True)
+    for image_file in (ROOT / "images").iterdir():
+        if image_file.is_file():
+            shutil.copy2(image_file, OUTPUT / "images" / image_file.name)
+
     # Deploy lightweight WebP copies; fall back to PNGs only without Pillow.
     works_source = ROOT / "images" / "works"
     works_target = OUTPUT / "images" / "works"
