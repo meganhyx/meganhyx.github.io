@@ -8,6 +8,8 @@ let allSeries = []
 let selectedWork = null
 let galleryIndex = 0
 let previousFocus = null
+let currentSeries = 'all'
+let lastColumnCount = 0
 
 const fetchJson = async (path) => {
   const response = await fetch(path)
@@ -81,18 +83,36 @@ const renderFilters = (active = 'all') => {
   $('#filters').innerHTML = `<button type="button" data-filter="all" class="${active === 'all' ? 'active' : ''}">全部</button>${allSeries.map((item) => `<button type="button" data-filter="${item.slug}" class="${active === item.slug ? 'active' : ''}">${item.title}</button>`).join('')}`
 }
 
+const workCardHtml = (work, index) => `
+  <article class="work-card ${work.layout || 'natural'}">
+    <button class="work-open" type="button" data-work="${work.slug}" aria-label="查看作品《${work.title}》">
+      <span class="art-frame"><img src="${asset(work.image)}" alt="${work.alt}" loading="${index > 1 ? 'lazy' : 'eager'}"><span class="view-work">查看作品</span></span>
+      <span class="work-info"><span><strong>${work.title}</strong><small>${work.medium} · ${work.year}</small></span><span class="work-number">${pad(work.order)}</span></span>
+    </button>
+  </article>`
+
+const galleryColumnCount = () => {
+  if (window.matchMedia('(max-width: 700px)').matches) return 1
+  if (window.matchMedia('(max-width: 1080px)').matches) return 2
+  return 3
+}
+
+const distributeIntoColumns = (works, count) => {
+  const columns = Array.from({ length: count }, () => [])
+  works.forEach((work, index) => columns[index % count].push(work))
+  return columns
+}
+
 const renderWorks = (active = 'all') => {
   const visible = active === 'all' ? allWorks : allWorks.filter((work) => work.series === active)
-  $('#works-grid').innerHTML = visible.map((work, index) => `
-    <article class="work-card ${work.layout || 'natural'}">
-      <button class="work-open" type="button" data-work="${work.slug}" aria-label="查看作品《${work.title}》">
-        <span class="art-frame"><img src="${asset(work.image)}" alt="${work.alt}" loading="${index > 1 ? 'lazy' : 'eager'}"><span class="view-work">查看作品</span></span>
-        <span class="work-info"><span><strong>${work.title}</strong><small>${work.medium} · ${work.year}</small></span><span class="work-number">${pad(work.order)}</span></span>
-      </button>
-    </article>`).join('') || '<p class="empty-state">这个系列的作品正在整理中。</p>'
+  const count = Math.min(galleryColumnCount(), Math.max(visible.length, 1))
+  $('#works-grid').innerHTML = distributeIntoColumns(visible, count)
+    .map((column) => `<div class="works-col">${column.map((work) => workCardHtml(work, allWorks.indexOf(work))).join('')}</div>`)
+    .join('') || '<p class="empty-state">这个系列的作品正在整理中。</p>'
 }
 
 const selectSeries = (slug) => {
+  currentSeries = slug
   renderFilters(slug)
   renderWorks(slug)
 }
@@ -200,6 +220,14 @@ const start = async () => {
       $('#hero-caption').innerHTML = `<span>${featured.title}，${featured.year}</span><span>${featured.medium} / ${featured.dimensions || '尺寸待补充'}</span>`
     }
     bindInteractions()
+    lastColumnCount = galleryColumnCount()
+    window.addEventListener('resize', () => {
+      const count = galleryColumnCount()
+      if (count !== lastColumnCount) {
+        lastColumnCount = count
+        renderWorks(currentSeries)
+      }
+    })
   } catch (error) {
     console.error(error)
     $('#works-grid').innerHTML = '<p class="empty-state">作品内容暂时无法读取，请通过本地服务器或 GitHub Pages 打开网站。</p>'
