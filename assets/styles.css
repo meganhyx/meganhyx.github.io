@@ -161,7 +161,7 @@ img { display: block; max-width: 100%; }
   .nav { grid-template-columns: 1fr auto; }
   .availability { display: none; }
   .menu-button { display: grid; justify-self: end; }
-  .nav-panel { position: fixed; top: 77px; right: 0; bottom: 0; left: 0; display: none; place-content: center; gap: 24px; background: var(--paper); font-family: var(--serif); font-size: 36px; text-align: center; opacity: 0; pointer-events: none; transform: translateY(-12px); transition: opacity 180ms ease, transform 180ms ease; }
+  .nav-panel { position: absolute; top: 100%; right: 0; left: 0; display: none; height: calc(100vh - 77px); place-content: center; gap: 24px; background: var(--paper); font-family: var(--serif); font-size: 36px; text-align: center; opacity: 0; pointer-events: none; transform: translateY(-12px); transition: opacity 180ms ease, transform 180ms ease; }
   .nav-panel.is-open { display: grid; opacity: 1; pointer-events: auto; transform: translateY(0); }
   .hero { grid-template-columns: 1fr; padding-top: 84px; }
   .hero-art { width: min(86%, 580px); margin: 34px auto 0; justify-self: center; }
