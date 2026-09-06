@@ -92,8 +92,8 @@ img { display: block; max-width: 100%; }
 .works-col { flex: 1 1 0; min-width: 0; }
 .work-card { display: block; min-width: 0; margin-bottom: 72px; }
 .work-open { display: block; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: zoom-in; }
-.art-frame { position: relative; overflow: hidden; display: block; width: 100%; min-height: 0; background: #d9d5cc; }
-.art-frame img, .work-card.portrait .art-frame img, .work-card.landscape .art-frame img, .work-card.square .art-frame img { display: block; width: 100%; height: auto; object-fit: contain; transition: transform 700ms cubic-bezier(.2,.7,.2,1); }
+.art-frame { position: relative; overflow: hidden; display: block; width: 100%; min-height: 0; max-height: calc(100vh - 175px); max-height: calc(100dvh - 175px); background: #d9d5cc; }
+.art-frame img, .work-card.portrait .art-frame img, .work-card.landscape .art-frame img, .work-card.square .art-frame img { display: block; width: 100%; height: auto; max-height: calc(100vh - 175px); max-height: calc(100dvh - 175px); object-fit: contain; transition: transform 700ms cubic-bezier(.2,.7,.2,1); }
 .view-work { position: absolute; right: 16px; bottom: 16px; padding: 9px 12px; border-radius: 99px; background: rgba(250,248,243,.9); color: var(--ink); font-size: 11px; opacity: 0; transform: translateY(8px); transition: opacity 220ms ease, transform 220ms ease; backdrop-filter: blur(8px); }
 .work-open:hover .view-work, .work-open:focus-visible .view-work { opacity: 1; transform: translateY(0); }
 .work-open:hover .art-frame img { transform: scale(1.025); }
