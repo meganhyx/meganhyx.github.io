@@ -10,11 +10,20 @@ import sys
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parent / "_site"
+ROOT = SITE.parent
 
 
 class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(SITE), **kwargs)
+
+    def translate_path(self, path):
+        # Local-only dev tool: the naming workbench lives at the project root
+        # and must never be deployed to the public site.
+        clean = path.split("?", 1)[0].split("#", 1)[0]
+        if clean in ("/name-editor.html", "/name-editor"):
+            return str(ROOT / "name-editor.html")
+        return super().translate_path(path)
 
     def end_headers(self):
         self.send_header("Cache-Control", "no-store, must-revalidate")

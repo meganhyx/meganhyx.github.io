@@ -127,10 +127,22 @@ const selectSeries = (slug) => {
 
 const updateLightboxImage = () => {
   const gallery = [selectedWork.image, ...(selectedWork.gallery || [])]
-  $('#lightbox-image').src = asset(gallery[galleryIndex])
-  $('#lightbox-image').alt = selectedWork.alt
+  const current = gallery[galleryIndex]
+  const img = $('#lightbox-image')
+  img.src = asset(current)
+  img.alt = selectedWork.alt
   $('#gallery-count').textContent = `${galleryIndex + 1} / ${gallery.length}`
   $('#gallery-controls').hidden = gallery.length < 2
+  // The list serves an optimized copy; once the full-resolution original
+  // finishes loading, swap it in for maximum detail.
+  if (/\.webp$/i.test(current)) {
+    const token = `${selectedWork.slug}:${galleryIndex}`
+    const original = new Image()
+    original.onload = () => {
+      if (selectedWork && `${selectedWork.slug}:${galleryIndex}` === token) img.src = original.src
+    }
+    original.src = asset(current.replace(/\.webp$/i, '.png'))
+  }
 }
 
 const openWork = (work) => {

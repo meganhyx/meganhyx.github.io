@@ -4,3 +4,4 @@ _site/
 *.local
 .DS_Store
 Thumbs.db
+/name-editor.html

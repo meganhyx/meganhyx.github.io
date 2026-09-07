@@ -91,6 +91,11 @@ def main() -> None:
             destination = works_target / webp_path.relative_to(works_source)
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(webp_path, destination)
+        # Originals ship too, so the lightbox can show the full-resolution file.
+        for png_path in sorted(works_source.rglob("*.png")):
+            destination = works_target / png_path.relative_to(works_source)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(png_path, destination)
     else:
         shutil.copytree(works_source, works_target)
     shutil.copytree(ROOT / "images" / "placeholders", OUTPUT / "images" / "placeholders")
