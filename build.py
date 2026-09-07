@@ -74,6 +74,7 @@ def main() -> None:
     optimized = optimize_work_images()
 
     shutil.copy2(ROOT / "index.html", OUTPUT / "index.html")
+    shutil.copy2(ROOT / "name-editor.html", OUTPUT / "name-editor.html")
     shutil.copytree(ROOT / "assets", OUTPUT / "assets")
 
     # Top-level images (e.g. the artist portrait) live beside the works tree.

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>作品命名工作台（本地工具）</title>
+<style>
+  :root { --paper: #f6f2ea; --paper-soft: #fbf8f2; --ink: #1d1a15; --muted: #7a7368; --line: #e2dccf; --accent: #b4451f; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Songti SC", "Noto Serif SC", "Microsoft YaHei", serif; }
+  header { position: sticky; top: 0; z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line); padding: 18px 24px 14px; }
+  h1 { margin: 0 0 10px; font-size: 20px; font-weight: 400; letter-spacing: .04em; }
+  .bar { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+  .bar small { color: var(--muted); }
+  .bar button, .bar a { font: inherit; font-size: 13px; padding: 7px 14px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; text-decoration: none; }
+  .bar button:hover { background: var(--ink); color: var(--paper); }
+  .bar button:disabled { opacity: .35; cursor: default; }
+  .filters { margin-left: auto; display: flex; gap: 8px; }
+  .filters button { border-color: var(--line); color: var(--muted); }
+  .filters button.active { border-color: var(--ink); color: var(--ink); }
+  main { max-width: 1180px; margin: 0 auto; padding: 26px 24px 80px; display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 22px; }
+  .card { display: flex; gap: 16px; background: var(--paper-soft); border: 1px solid var(--line); padding: 14px; }
+  .card img { width: 118px; height: 148px; object-fit: contain; background: #d9d5cc; flex: 0 0 auto; }
+  .card .meta { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+  .card .file { color: var(--muted); font-size: 11px; font-family: Consolas, monospace; }
+  .card .series { color: var(--muted); font-size: 11px; }
+  .card .current { font-size: 15px; }
+  .card .current small { color: var(--muted); font-size: 11px; margin-left: 8px; }
+  .card input { font: inherit; font-size: 15px; padding: 8px 10px; border: 1px solid var(--line); background: #fff; color: var(--ink); width: 100%; }
+  .card input:focus { outline: none; border-color: var(--accent); }
+  .card.named .current small { color: #2c6e49; }
+  .card input.dirty { border-color: var(--accent); }
+  .empty-state { color: var(--muted); }
+  .hint { max-width: 1180px; margin: 18px auto -8px; padding: 0 24px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+</style>
+</head>
+<body>
+<header>
+  <h1>作品命名工作台</h1>
+  <div class="bar">
+    <span class="bar small"><small id="stats">加载中…</small></span>
+    <button id="export-btn" disabled>下载修改结果</button>
+    <button id="copy-btn" disabled>复制为文本</button>
+    <a href="/content/works.json" target="_blank">查看原始数据</a>
+    <span class="filters">
+      <button data-f="all" class="active">全部</button>
+      <button data-f="unnamed">未命名</button>
+      <button data-f="named">已命名</button>
+      <button data-f="dirty">本次已改</button>
+    </span>
+  </div>
+</header>
+<p class="hint">在输入框里直接写新名字（留空或保持原样 = 不修改）。改完后点上方“下载修改结果”，把下载的 JSON 文件发给 WorkBuddy，由它批量应用到网站。这个页面是本地工具，不会部署到线上。</p>
+<main id="grid"><p class="empty-state">加载中…</p></main>
+<script>
+const PLACEHOLDER = /^(插画|海报与 IP 设计|丙烯与油画|水彩人物|水彩|版画)\s?\d{2}$/
+const state = { works: [], titles: {}, filter: 'all' }
+
+const $ = (sel) => document.querySelector(sel)
+
+const isPlaceholder = (title) => PLACEHOLDER.test((title || '').trim())
+
+const render = () => {
+  const grid = $('#grid')
+  const items = state.works.filter((w) => {
+    if (state.filter === 'unnamed') return isPlaceholder(w.title)
+    if (state.filter === 'named') return !isPlaceholder(w.title)
+    if (state.filter === 'dirty') return state.titles[w.slug] !== undefined && state.titles[w.slug] !== w.title
+    return true
+  })
+  if (!items.length) { grid.innerHTML = '<p class="empty-state">这个筛选下没有作品。</p>'; return }
+  grid.innerHTML = items.map((w) => {
+    const value = state.titles[w.slug] !== undefined ? state.titles[w.slug] : w.title
+    const dirty = state.titles[w.slug] !== undefined && state.titles[w.slug] !== w.title
+    const named = !isPlaceholder(w.title)
+    return `
+    <div class="card ${named ? 'named' : ''}">
+      <img src="${w.image}" alt="${w.alt || w.title}" loading="lazy">
+      <div class="meta">
+        <span class="file">${w.image.split('/').pop()}</span>
+        <span class="series">${w.series}</span>
+        <span class="current">当前：${w.title}<small>${named ? '已命名' : '占位名'}</small></span>
+        <input type="text" data-slug="${w.slug}" value="${value.replace(/"/g, '&quot;')}" placeholder="输入新名字" class="${dirty ? 'dirty' : ''}">
+      </div>
+    </div>`
+  }).join('')
+  grid.querySelectorAll('input').forEach((input) => {
+    input.addEventListener('input', () => {
+      state.titles[input.dataset.slug] = input.value
+      input.classList.toggle('dirty', input.value !== state.works.find((w) => w.slug === input.dataset.slug).title)
+      refresh()
+    })
+  })
+}
+
+const refresh = () => {
+  const named = state.works.filter((w) => !isPlaceholder(w.title)).length
+  const dirty = Object.keys(state.titles).filter((slug) => {
+    const w = state.works.find((x) => x.slug === slug)
+    return w && state.titles[slug] !== w.title
+  }).length
+  $('#stats').textContent = `共 ${state.works.length} 件 · 已命名 ${named} · 占位 ${state.works.length - named} · 本次修改 ${dirty}`
+  $('#export-btn').disabled = dirty === 0
+  render()
+}
+
+const exportChanges = () => {
+  const changes = collectChanges()
+  const blob = new Blob([JSON.stringify(changes, null, 2) + '\n'], { type: 'application/json' })
+  const link = document.createElement('a')
+  link.href = URL.createObjectURL(blob)
+  link.download = 'naming-updates.json'
+  link.click()
+  URL.revokeObjectURL(link.href)
+}
+
+const collectChanges = () => state.works
+  .filter((w) => state.titles[w.slug] !== undefined && state.titles[w.slug].trim() !== '' && state.titles[w.slug] !== w.title)
+  .map((w) => ({ slug: w.slug, file: w.image.split('/').pop(), oldTitle: w.title, newTitle: state.titles[w.slug].trim() }))
+
+const copyAsText = async () => {
+  const lines = collectChanges().map((c) => `${c.file} = ${c.newTitle}`)
+  const text = lines.join('\n')
+  try {
+    await navigator.clipboard.writeText(text)
+  } catch {
+    const box = document.createElement('textarea')
+    box.value = text
+    document.body.appendChild(box)
+    box.select()
+    document.execCommand('copy')
+    box.remove()
+  }
+  const btn = document.getElementById('copy-btn')
+  btn.textContent = '已复制，可粘贴发送'
+  setTimeout(() => { btn.textContent = '复制为文本' }, 2000)
+}
+
+const init = async () => {
+  try {
+    const res = await fetch('/content/works.json', { cache: 'no-store' })
+    state.works = (await res.json()).filter((w) => w.published)
+    state.works.sort((a, b) => a.order - b.order)
+    refresh()
+    $('#export-btn').addEventListener('click', exportChanges)
+    $('#copy-btn').addEventListener('click', copyAsText)
+    document.querySelectorAll('.filters button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filters button').forEach((b) => b.classList.remove('active'))
+        btn.classList.add('active')
+        state.filter = btn.dataset.f
+        render()
+      })
+    })
+  } catch (error) {
+    $('#grid').innerHTML = '<p class="empty-state">读取作品数据失败，请刷新重试，或通过本地 http://127.0.0.1:4174/name-editor.html 打开。</p>'
+  }
+}
+
+init()
+</script>
+</body>
+</html>
