@@ -4,3 +4,4 @@ _site/
 *.local
 .DS_Store
 Thumbs.db
+/AI-HANDOFF.md
