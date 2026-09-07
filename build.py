@@ -5,8 +5,8 @@ import shutil
 import struct
 from pathlib import Path
 
-MAX_EDGE = 2000
-WEBP_QUALITY = 85
+MAX_EDGE = 2560
+WEBP_QUALITY = 92
 
 ROOT = Path(__file__).resolve().parent
 OUTPUT = ROOT / "_site"
